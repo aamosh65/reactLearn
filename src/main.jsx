@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import Stepcounter from "./pages/stepcounter.jsx";
 import Notfoundpage from "./pages/Notfoundpage.jsx";
 import Tempconverter from "./pages/Tempconverter.jsx";
+import Users from "./pages/userexplorer/Users.jsx";
 import {
   BrowserRouter,
   createBrowserRouter,
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/stepcounter", element: <Stepcounter /> },
   { path: "/tempconverter", element: <Tempconverter /> },
+  { path: "/user", element: <Users /> },
   { path: "*", element: <Notfoundpage /> },
 ]);
 

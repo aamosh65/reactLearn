@@ -10,6 +10,8 @@ function App() {
       <Link to={"/tempconverter"}>
         <p>Temp Converter</p>
       </Link>
+
+      <Link to={"/user"}>UserExplorer</Link>
     </>
   );
 }
