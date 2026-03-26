@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Oval } from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -54,6 +55,8 @@ const Users = () => {
       )}
 
       {error != null ? <h1>{error}</h1> : <span></span>}
+
+      <Link to={"/"}>Return to Homepage</Link>
     </>
   );
 };

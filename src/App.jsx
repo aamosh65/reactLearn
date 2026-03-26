@@ -10,8 +10,8 @@ function App() {
       <Link to={"/tempconverter"}>
         <p>Temp Converter</p>
       </Link>
-
       <Link to={"/user"}>UserExplorer</Link>
+      <Link to={"/dynamichome"}>Dynamic Dashboard </Link>
     </>
   );
 }
