@@ -7,6 +7,7 @@ import Notfoundpage from "./pages/Notfoundpage.jsx";
 import Tempconverter from "./pages/Tempconverter.jsx";
 import Users from "./pages/userexplorer/Users.jsx";
 import Dynamic_Home from "./pages/DynamicTaskboard/Dynamic_Home.jsx";
+import ProfileHome from "./pages/ProfileCardApp/ProfileHome.jsx";
 import {
   BrowserRouter,
   createBrowserRouter,
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
   { path: "/tempconverter", element: <Tempconverter /> },
   { path: "/user", element: <Users /> },
   { path: "/dynamichome", element: <Dynamic_Home /> },
+  { path: "/profilecard", element: <ProfileHome /> },
   { path: "*", element: <Notfoundpage /> },
 ]);
 

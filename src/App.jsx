@@ -12,6 +12,7 @@ function App() {
       </Link>
       <Link to={"/user"}>UserExplorer</Link>
       <Link to={"/dynamichome"}>Dynamic Dashboard </Link>
+      <Link to={"/profilecard"}>Profile Card</Link>
     </>
   );
 }

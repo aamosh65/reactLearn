@@ -5,8 +5,6 @@ const TaskInput = () => {
   const [currentInput, setCurrentInput] = useState("");
 
   async function getData() {
-
-
     let newTask = {
       id: Date.now(),
       task: taskContent,
