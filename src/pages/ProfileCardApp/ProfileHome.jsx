@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProfileCard from "./ProfileCard";
+import { Link } from "react-router-dom";
 
 const ProfileHome = () => {
   const [users, setUsers] = useState([]);
@@ -7,6 +8,14 @@ const ProfileHome = () => {
   const [nameValue, setNameValue] = useState("");
   const [ageValue, setAgeValue] = useState("");
   const [hobbyValue, setHobbyValue] = useState("");
+
+  const hiFunction = (nameOfUser) => {
+    return alert("Hello " + nameOfUser);
+  };
+
+  const deleteMe = (id) => {
+    setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
+  };
 
   const addUser = () => {
     setUsers((prevUsers) => [
@@ -63,8 +72,21 @@ const ProfileHome = () => {
 
       <h2>Profile List</h2>
       {users.map(({ id, name, age, hobby }) => {
-        return <ProfileCard key={id} name={name} age={age} hobby={hobby} />;
+        return (
+          <ProfileCard
+            key={id}
+            name={name}
+            age={age}
+            hobby={hobby}
+            hiFunction={() => hiFunction(name)}
+            deleteMe={() => deleteMe(id)}
+          />
+        );
       })}
+
+      <Link to={"/"}>
+        <button>Go back Home</button>
+      </Link>
     </div>
   );
 };

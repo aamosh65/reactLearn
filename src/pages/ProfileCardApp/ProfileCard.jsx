@@ -6,6 +6,8 @@ const ProfileCard = (props) => {
       <p>Name: {props.name}</p>
       <p>Age: {props.age}</p>
       <p>Hobby: {props.hobby}</p>
+      <button onClick={props.hiFunction}>Alert</button>
+      <button onClick={props.deleteMe}>Delete User</button>
     </div>
   );
 };
