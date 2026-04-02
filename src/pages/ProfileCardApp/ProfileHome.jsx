@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProfileCard from "./ProfileCard";
 import { Link } from "react-router-dom";
 
 const ProfileHome = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(() => {
+    try {
+      const userRawData = localStorage.getItem("savedUsersList");
+      return userRawData ? JSON.parse(userRawData) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  const prevUsersCount = useRef(users.length);
+  const isFirstRender = useRef(true);
 
   const [nameValue, setNameValue] = useState("");
   const [ageValue, setAgeValue] = useState("");
@@ -32,6 +42,25 @@ const ProfileHome = () => {
     setAgeValue("");
     setHobbyValue("");
   };
+  useEffect(() => {
+    localStorage.setItem("savedUsersList", JSON.stringify(users));
+  }, [users]);
+
+  useEffect(() => {
+    if (isFirstRender.current === true) {
+      isFirstRender.current = false;
+      return;
+    }
+    if (users.length > prevUsersCount.current) {
+      console.log("User Added:" + users[users.length - 1].name);
+    }
+    if (prevUsersCount.current > users.length) {
+      console.log("User is deleted");
+    }
+
+    prevUsersCount.current = users.length;
+  }, [users]);
+
   return (
     <div>
       <h1>Profile Showcase</h1>

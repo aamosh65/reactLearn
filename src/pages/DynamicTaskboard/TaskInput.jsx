@@ -7,7 +7,7 @@ const TaskInput = () => {
   async function getData() {
     let newTask = {
       id: Date.now(),
-      task: taskContent,
+      task: currentInput,
       completed: false,
     };
     setCurrTask([...currTask, newTask]);
