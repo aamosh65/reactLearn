@@ -13,6 +13,7 @@ function App() {
       <Link to={"/user"}>UserExplorer</Link>
       <Link to={"/dynamichome"}>Dynamic Dashboard </Link>
       <Link to={"/profilecard"}>Profile Card</Link>
+      <Link to={"/formpractice"}>Form Practice</Link>
     </>
   );
 }

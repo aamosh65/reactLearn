@@ -13,6 +13,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import FormPractice from "./pages/FromPractice/FormPractice.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   { path: "/user", element: <Users /> },
   { path: "/dynamichome", element: <Dynamic_Home /> },
   { path: "/profilecard", element: <ProfileHome /> },
+  {path: "/formpractice" , element: <FormPractice />},
   { path: "*", element: <Notfoundpage /> },
 ]);
 
